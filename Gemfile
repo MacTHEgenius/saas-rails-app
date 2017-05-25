@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sendgrid-ruby'
+gem 'devise'
+gem 'milia'
 
 group :development, :test do
   gem 'sqlite3'
@@ -28,3 +30,6 @@ group :production do
   gem 'rails_12factor'
 end
 
+
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
