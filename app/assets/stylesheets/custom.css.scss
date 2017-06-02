@@ -114,7 +114,7 @@
 }
 
 /*
- * Registration form
+ * Padding & margin
  */
  
 .no-side-padding {
@@ -136,4 +136,17 @@
 
 .no-margin-bottom {
     margin-bottom: 0 !important;
+}
+
+/*
+ * Project list
+ */
+ 
+.table tr td {
+    a.main-link {
+        color: #428bca;
+    }
+    a.main-link:hover {
+        background: none;
+    }
 }
