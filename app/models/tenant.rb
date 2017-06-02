@@ -5,6 +5,10 @@ class Tenant < ActiveRecord::Base
   has_many :projects, dependent: :destroy
   
   validates :name, presence: true, uniqueness: true
+  
+  def can_create_projects?
+    (plan == 'free' && projects.count < 1) || plan == 'premium'
+  end
 
   def self.create_new_tenant(tenant_params, user_params, coupon_params)
 
@@ -38,13 +42,13 @@ class Tenant < ActiveRecord::Base
   #   tenant -- new tenant obj
   #   other  -- any other parameter string from initial request
   # ------------------------------------------------------------------------
-    def self.tenant_signup(user, tenant, other = nil)
-      #  StartupJob.queue_startup( tenant, user, other )
-      # any special seeding required for a new organizational tenant
-      #
-      Member.create_org_admin(user)
-      #
-    end
+  def self.tenant_signup(user, tenant, other = nil)
+    #  StartupJob.queue_startup( tenant, user, other )
+    # any special seeding required for a new organizational tenant
+    #
+    Member.create_org_admin(user)
+    #
+  end
 
    
 end
