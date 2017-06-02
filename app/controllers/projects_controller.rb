@@ -69,3 +69,4 @@ class ProjectsController < ApplicationController
         redirect_to :root, flash: { error: 'You are not authorized to access any organization other than your own' }
       end
     end
+end
