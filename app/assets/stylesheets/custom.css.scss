@@ -5,11 +5,11 @@
 .user-name {
     padding: 0 !important ;
     padding-left: 5px;
-    padding-top: 15px !important;
+    padding-top: 7px !important;
     text-align: center;
     
     a {
-        color: #fff !important;
+        color: #b5b5b5 !important;
         margin: 0 !important;
         padding: 5px!important;
     }
@@ -128,4 +128,12 @@
 
 .no-right-padding {
     padding-right: 0 !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
 }
