@@ -11,11 +11,7 @@
     
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <!-- LEFT NAVBAR -->
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Link1", "/path1"  %></li>
-        <li><%= link_to "Link2", "/path2"  %></li>
-        <li><%= link_to "Link3", "/path3"  %></li>
-      </ul>
+      <ul class="nav navbar-nav"></ul>
         
       <!-- RIGHT NAVBAR -->
       <ul class="nav navbar-right col-md-4">
@@ -28,14 +24,14 @@
         </li>
         <li class="col-md-1">&nbsp;</li>
         <li class="col-md-3 logout">
-          <%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', method: :delete) %>
+          <%= link_to('Logout', destroy_user_session_path, class: 'btn btn-danger navbar-btn', title: 'Logout', method: :delete) %>
         </li>
         
         <!-- Not logged in -->
         <% else %>
         
         <li class="col-md-4 pull-right">
-          <%= link_to('Sign in', new_user_session_path, class: 'btn btn-primary', title: 'Sign in') %>
+          <%= button_to('Sign in', new_user_session_path, class: 'btn btn-primary navbar-btn', title: 'Sign in', :method => :get) %>
         </li>
         
         <% end %>
