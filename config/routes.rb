@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   
-  resources :members
   get 'home/index'
 
   root :to => "home#index"
+  
+  resources :tenants do
+    resources :projects
+  end
+  resources :members
 
     
   # *MUST* come *BEFORE* devise's definitions (below)
